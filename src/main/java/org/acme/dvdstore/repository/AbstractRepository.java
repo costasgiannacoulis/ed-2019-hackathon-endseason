@@ -20,7 +20,7 @@ public abstract class AbstractRepository<T extends BaseEntity> extends AbstractL
 
 	@PostConstruct
 	private void init() {
-		log.debug("Starting {}.", getClass().getName());
+		log.trace("Starting {}.", getClass().getName());
 	}
 
 	@Override

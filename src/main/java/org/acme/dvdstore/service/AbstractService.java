@@ -14,7 +14,7 @@ public abstract class AbstractService<T extends BaseEntity> extends AbstractLogE
 
 	@PostConstruct
 	private void init() {
-		log.debug("Starting {}.", getClass().getName());
+		log.trace("Starting {}.", getClass().getName());
 	}
 
 	@Override
