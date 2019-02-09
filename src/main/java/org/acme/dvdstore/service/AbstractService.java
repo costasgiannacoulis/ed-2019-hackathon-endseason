@@ -8,6 +8,9 @@ import javax.annotation.PostConstruct;
 import org.acme.dvdstore.base.AbstractLogEntity;
 import org.acme.dvdstore.model.BaseEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 public abstract class AbstractService<T extends BaseEntity> extends AbstractLogEntity implements BaseService<T, Long> {
 	public abstract JpaRepository<T, Long> getRepository();
@@ -18,6 +21,8 @@ public abstract class AbstractService<T extends BaseEntity> extends AbstractLogE
 	}
 
 	@Override
+	@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, rollbackFor =
+		Exception.class)
 	public List<T> createAll(final T... entities) {
 		final List<T> updatedEntities = new ArrayList<>();
 		for (final T entity : entities) {
@@ -27,24 +32,32 @@ public abstract class AbstractService<T extends BaseEntity> extends AbstractLogE
 	}
 
 	@Override
+	@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, rollbackFor =
+		Exception.class)
 	public T create(final T entity) {
 		log.trace("Creating {}.", entity);
 		return getRepository().save(entity);
 	}
 
 	@Override
+	@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, rollbackFor =
+		Exception.class)
 	public void update(final T entity) {
 		log.trace("Updating {}.", entity);
 		getRepository().save(entity);
 	}
 
 	@Override
+	@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, rollbackFor =
+		Exception.class)
 	public void delete(final T entity) {
 		log.trace("Deleting {}.", entity);
 		getRepository().delete(entity);
 	}
 
 	@Override
+	@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, rollbackFor =
+		Exception.class)
 	public void deleteById(final Long id) {
 		final T entityFound = getRepository().getOne(id);
 		log.trace("Deleting {}.", entityFound);
