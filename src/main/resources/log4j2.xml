@@ -11,21 +11,9 @@
 			<PatternLayout pattern="${LOG_PATTERN}" />
 		</Console>
 
-		<RollingRandomAccessFile name="BulkAppender"
-			fileName="logs/dvdstore-bulk.log"
-			filePattern="logs/dvdstore-bulk-%d{yyyy-MM-dd_hh-mm}_%i.zip">
-			<PatternLayout>
-				<Pattern>${LOG_PATTERN}</Pattern>
-			</PatternLayout>
-			<Policies>
-				<SizeBasedTriggeringPolicy size="100KB" />
-			</Policies>
-			<DefaultRolloverStrategy max="10" />
-		</RollingRandomAccessFile>
-
-		<RollingRandomAccessFile name="CommandAppender"
-			fileName="logs/dvdstore-commands.log"
-			filePattern="logs/dvdstore-commands-%d{yyyy-MM-dd_hh-mm}_%i.zip">
+		<RollingRandomAccessFile name="StoreAppender"
+			fileName="logs/dvdstore.log"
+			filePattern="logs/dvdstore-%d{yyyy-MM-dd_hh-mm}_%i.zip">
 			<PatternLayout>
 				<Pattern>${LOG_PATTERN}</Pattern>
 			</PatternLayout>
@@ -39,12 +27,28 @@
 	<Loggers>
 		<AsyncLogger name="org.acme.dvdstore" level="debug" additivity="false">
 			<AppenderRef ref="ConsoleAppender" />
-			<AppenderRef ref="CommandAppender" />
+			<AppenderRef ref="StoreAppender" />
+		</AsyncLogger>
+		<AsyncLogger name="org.springframework.data" level="debug" additivity="false">
+			<AppenderRef ref="ConsoleAppender" />
+			<AppenderRef ref="StoreAppender" />
+		</AsyncLogger>
+		<AsyncLogger name="com.zaxxer.hikari" level="debug" additivity="false">
+			<AppenderRef ref="ConsoleAppender" />
+			<AppenderRef ref="StoreAppender" />
+		</AsyncLogger>
+		<AsyncLogger name="org.hibernate.SQL" level="debug" additivity="false">
+			<AppenderRef ref="ConsoleAppender" />
+			<AppenderRef ref="StoreAppender" />
+		</AsyncLogger>
+		<AsyncLogger name="org.hibernate.type.descriptor.sql.BasicBinder" level="debug" additivity="false">
+			<AppenderRef ref="ConsoleAppender" />
+			<AppenderRef ref="StoreAppender" />
 		</AsyncLogger>
 
 		<Root level="info">
 			<AppenderRef ref="ConsoleAppender" />
-			<AppenderRef ref="CommandAppender" />
+			<AppenderRef ref="StoreAppender" />
 		</Root>
 	</Loggers>
 </Configuration>
