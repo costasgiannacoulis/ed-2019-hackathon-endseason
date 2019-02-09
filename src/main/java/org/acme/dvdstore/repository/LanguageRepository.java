@@ -1,6 +1,9 @@
 package org.acme.dvdstore.repository;
 
 import org.acme.dvdstore.model.Language;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface LanguageRepository extends BaseRepository<Language, Long> {
+@Repository
+public interface LanguageRepository extends JpaRepository<Language, Long> {
 }

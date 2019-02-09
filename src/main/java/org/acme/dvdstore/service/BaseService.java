@@ -11,6 +11,8 @@ public interface BaseService<T, N> {
 
 	void delete(T entity);
 
+	void deleteById(N id);
+
 	boolean exists(T entity);
 
 	T get(N id);

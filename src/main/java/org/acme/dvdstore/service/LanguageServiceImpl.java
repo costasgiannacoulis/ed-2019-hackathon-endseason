@@ -1,18 +1,19 @@
 package org.acme.dvdstore.service;
 
 import org.acme.dvdstore.model.Language;
-import org.acme.dvdstore.repository.BaseRepository;
 import org.acme.dvdstore.repository.LanguageRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Service;
 
-@Component
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
 public class LanguageServiceImpl extends AbstractService<Language> implements LanguageService {
-	@Autowired
-	private LanguageRepository languageRepository;
+	private final LanguageRepository languageRepository;
 
 	@Override
-	public BaseRepository<Language, Long> getRepository() {
+	public JpaRepository<Language, Long> getRepository() {
 		return languageRepository;
 	}
 }

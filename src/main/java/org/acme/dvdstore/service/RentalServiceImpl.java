@@ -1,18 +1,19 @@
 package org.acme.dvdstore.service;
 
 import org.acme.dvdstore.model.Rental;
-import org.acme.dvdstore.repository.BaseRepository;
 import org.acme.dvdstore.repository.RentalRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Service;
 
-@Component
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
 public class RentalServiceImpl extends AbstractService<Rental> implements RentalService {
-	@Autowired
-	private RentalRepository rentalRepository;
+	private final RentalRepository rentalRepository;
 
 	@Override
-	public BaseRepository<Rental, Long> getRepository() {
+	public JpaRepository<Rental, Long> getRepository() {
 		return rentalRepository;
 	}
 }

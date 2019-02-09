@@ -1,18 +1,19 @@
 package org.acme.dvdstore.service;
 
 import org.acme.dvdstore.model.Customer;
-import org.acme.dvdstore.repository.BaseRepository;
 import org.acme.dvdstore.repository.CustomerRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Service;
 
-@Component
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
 public class CustomerServiceImpl extends AbstractService<Customer> implements CustomerService {
-	@Autowired
-	private CustomerRepository customerRepository;
+	private final CustomerRepository customerRepository;
 
 	@Override
-	public BaseRepository<Customer, Long> getRepository() {
+	public JpaRepository<Customer, Long> getRepository() {
 		return customerRepository;
 	}
 }

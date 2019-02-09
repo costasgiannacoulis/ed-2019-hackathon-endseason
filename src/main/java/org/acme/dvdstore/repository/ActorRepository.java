@@ -1,6 +1,9 @@
 package org.acme.dvdstore.repository;
 
 import org.acme.dvdstore.model.Actor;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface ActorRepository extends BaseRepository<Actor, Long> {
+@Repository
+public interface ActorRepository extends JpaRepository<Actor, Long> {
 }
