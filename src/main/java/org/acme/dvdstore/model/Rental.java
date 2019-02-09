@@ -22,7 +22,7 @@ import lombok.ToString;
 
 @Entity
 @Table(name = "RENTALS")
-@SequenceGenerator(name = "idGenerator", sequenceName = "RENTALS_SEQ", initialValue = 1001)
+@SequenceGenerator(name = "idGenerator", sequenceName = "RENTALS_SEQ", initialValue = 1001, allocationSize = 1)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

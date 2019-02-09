@@ -15,7 +15,7 @@ import lombok.ToString;
 
 @Entity
 @Table(name = "CATEGORIES")
-@SequenceGenerator(name = "idGenerator", sequenceName = "CATEGORIES_SEQ", initialValue = 1001)
+@SequenceGenerator(name = "idGenerator", sequenceName = "CATEGORIES_SEQ", initialValue = 1001, allocationSize = 1)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
