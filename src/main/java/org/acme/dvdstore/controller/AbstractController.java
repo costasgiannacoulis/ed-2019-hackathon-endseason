@@ -12,7 +12,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -36,7 +35,7 @@ public abstract class AbstractController<T extends BaseEntity> {
 	@PostMapping
 	public ResponseEntity<ApiResponse> create(@Valid @RequestBody final T entity) {
 		return new ResponseEntity<>(ApiResponse.<T>builder().data(getBaseService().create(entity)).build(),
-									HttpStatus.CREATED);
+									getNoCacheHeaders(), HttpStatus.CREATED);
 	}
 
 	@PutMapping
@@ -59,11 +58,6 @@ public abstract class AbstractController<T extends BaseEntity> {
 		if (getBaseService().exists(entity)) {
 			getBaseService().delete(entity);
 		}
-	}
-
-	@PatchMapping("/{id}")
-	public void patch(@Valid @RequestBody final T entity) {
-		//TODO
 	}
 
 	protected HttpHeaders getNoCacheHeaders() {

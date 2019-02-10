@@ -7,6 +7,9 @@ import javax.annotation.PostConstruct;
 
 import org.acme.dvdstore.base.AbstractLogEntity;
 import org.acme.dvdstore.model.BaseEntity;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
@@ -34,6 +37,7 @@ public abstract class AbstractService<T extends BaseEntity> extends AbstractLogE
 	@Override
 	@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, rollbackFor =
 		Exception.class)
+	@CachePut(key = "#entity.getId()", cacheResolver = "dynamicCacheResolver")
 	public T create(final T entity) {
 		log.trace("Creating {}.", entity);
 		return getRepository().save(entity);
@@ -42,6 +46,7 @@ public abstract class AbstractService<T extends BaseEntity> extends AbstractLogE
 	@Override
 	@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, rollbackFor =
 		Exception.class)
+	@CachePut(key = "#entity.getId()", cacheResolver = "dynamicCacheResolver")
 	public void update(final T entity) {
 		log.trace("Updating {}.", entity);
 		getRepository().save(entity);
@@ -50,6 +55,7 @@ public abstract class AbstractService<T extends BaseEntity> extends AbstractLogE
 	@Override
 	@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, rollbackFor =
 		Exception.class)
+	@CacheEvict(key = "#entity.getId()", cacheResolver = "dynamicCacheResolver")
 	public void delete(final T entity) {
 		final T entityFound = getRepository().getOne(entity.getId());
 		log.trace("Deleting {}.", entityFound);
@@ -59,6 +65,7 @@ public abstract class AbstractService<T extends BaseEntity> extends AbstractLogE
 	@Override
 	@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, rollbackFor =
 		Exception.class)
+	@CacheEvict(key = "#id", cacheResolver = "dynamicCacheResolver")
 	public void deleteById(final Long id) {
 		final T entityFound = getRepository().getOne(id);
 		log.trace("Deleting {}.", entityFound);
@@ -72,6 +79,7 @@ public abstract class AbstractService<T extends BaseEntity> extends AbstractLogE
 	}
 
 	@Override
+	@Cacheable(key = "#id", cacheResolver = "dynamicCacheResolver")
 	public T get(final Long id) {
 		log.trace("Retrieving entity with id {}.", id);
 		/*
@@ -85,8 +93,17 @@ public abstract class AbstractService<T extends BaseEntity> extends AbstractLogE
 	}
 
 	@Override
+	@Cacheable(cacheResolver = "dynamicCacheResolver")
 	public List<T> findAll() {
 		log.trace("Retrieving all entities.");
 		return getRepository().findAll();
+	}
+
+	protected final void simulateSlowService() {
+		try {
+			Thread.sleep(2000L);
+		} catch (final InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 }
