@@ -51,8 +51,9 @@ public abstract class AbstractService<T extends BaseEntity> extends AbstractLogE
 	@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, rollbackFor =
 		Exception.class)
 	public void delete(final T entity) {
-		log.trace("Deleting {}.", entity);
-		getRepository().delete(entity);
+		final T entityFound = getRepository().getOne(entity.getId());
+		log.trace("Deleting {}.", entityFound);
+		getRepository().delete(entityFound);
 	}
 
 	@Override
