@@ -40,6 +40,10 @@
 			<AppenderRef ref="ConsoleAppender" />
 			<AppenderRef ref="StoreAppender" />
 		</AsyncLogger>
+		<AsyncLogger name="org.springframework.cache" level="trace" additivity="false">
+			<AppenderRef ref="ConsoleAppender" />
+			<AppenderRef ref="StoreAppender" />
+		</AsyncLogger>
 		<AsyncLogger name="org.springframework.data" level="debug" additivity="false">
 			<AppenderRef ref="ConsoleAppender" />
 			<AppenderRef ref="StoreDataAppender" />
@@ -52,7 +56,7 @@
 			<AppenderRef ref="ConsoleAppender" />
 			<AppenderRef ref="StoreDataAppender" />
 		</AsyncLogger>
-		<AsyncLogger name="org.hibernate.type.descriptor.sql.BasicBinder" level="trace" additivity="false">
+		<AsyncLogger name="org.hibernate.type.descriptor.sql.BasicBinder" level="debug" additivity="false">
 			<AppenderRef ref="ConsoleAppender" />
 			<AppenderRef ref="StoreDataAppender" />
 		</AsyncLogger>
