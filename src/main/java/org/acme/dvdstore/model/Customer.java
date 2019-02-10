@@ -15,7 +15,7 @@ import lombok.ToString;
 
 @Entity
 @Table(name = "CUSTOMERS")
-@SequenceGenerator(name = "idGenerator", sequenceName = "CUSTOMERS_SEQ", initialValue = 1001, allocationSize = 1)
+@SequenceGenerator(name = "idGenerator", sequenceName = "CUSTOMERS_SEQ", initialValue = 1, allocationSize = 1)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -24,7 +24,7 @@ import lombok.ToString;
 @EqualsAndHashCode(callSuper = true)
 public class Customer extends BaseEntity {
 	@NotNull
-	@Column(length = 20, nullable = false)
+	@Column(length = 30, nullable = false)
 	private String firstName;
 	@NotNull
 	@Column(length = 50, nullable = false)

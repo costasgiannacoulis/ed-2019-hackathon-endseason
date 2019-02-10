@@ -23,7 +23,7 @@ import lombok.ToString;
 
 @Entity
 @Table(name = "FILMS")
-@SequenceGenerator(name = "idGenerator", sequenceName = "FILMS_SEQ", initialValue = 1001, allocationSize = 1)
+@SequenceGenerator(name = "idGenerator", sequenceName = "FILMS_SEQ", initialValue = 1, allocationSize = 1)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -32,10 +32,10 @@ import lombok.ToString;
 @EqualsAndHashCode(callSuper = true)
 public class Film extends BaseEntity {
 	@NotNull
-	@Column(length = 50, nullable = false)
+	@Column(length = 100, nullable = false)
 	private String title;
 	@NotNull
-	@Column(length = 255, nullable = false)
+	@Column(length = 512, nullable = false)
 	private String description;
 	@Column
 	private int release;
@@ -50,11 +50,12 @@ public class Film extends BaseEntity {
 
 	// In order to skip org.hibernate.loader.MultipleBagFetchException, in Hibernate > 5.0.8 use Set instead of List
 	// for Many-to-Many relations.
-	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	// We are not using CascadeType.ALL because we are dealing with a unidirectional relationship
+	@ManyToMany(cascade = {CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.EAGER)
 	@JoinTable(name = "FILM_ACTORS", joinColumns = @JoinColumn(name = "film_id"), inverseJoinColumns =
 	@JoinColumn(name = "actor_id"))
 	private Set<Actor> actors;
-	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@ManyToMany(cascade = {CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.EAGER)
 	@JoinTable(name = "FILM_CATEGORIES", joinColumns = @JoinColumn(name = "film_id"), inverseJoinColumns =
 	@JoinColumn(name = "category_id"))
 	private Set<Category> categories;
