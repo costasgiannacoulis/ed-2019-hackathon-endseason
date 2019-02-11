@@ -47,12 +47,12 @@ public class CustomerController extends AbstractController<Customer> {
 
 		final HttpHeaders headers = new HttpHeaders();
 		headers.addAll(getNoCacheHeaders());
-		headers.addAll(getDownloadHeaders("report-getCustomers.xlsx"));
 
 		final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 
 		final List<Customer> customers = customerService.findAll();
 		if (XLSX_MEDIA_TYPE.toString().equalsIgnoreCase(contentType)) {
+			headers.addAll(getDownloadHeaders("report-getCustomers.xlsx"));
 			log.trace("Generating XLSX report for {} customers.", customers.size());
 			reportBuilder.getCustomers(customers).write(outputStream);
 		} else {
