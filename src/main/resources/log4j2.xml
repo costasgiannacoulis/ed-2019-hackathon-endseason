@@ -61,7 +61,7 @@
 			<AppenderRef ref="StoreDataAppender" />
 		</AsyncLogger>
 
-		<Root level="info">
+		<Root level="debug">
 			<AppenderRef ref="ConsoleAppender" />
 			<AppenderRef ref="StoreAppender" />
 		</Root>
