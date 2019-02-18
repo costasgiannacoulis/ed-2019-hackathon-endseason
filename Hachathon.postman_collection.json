@@ -1,0 +1,1232 @@
+{
+	"info": {
+		"_postman_id": "9cfa8a95-5a47-4d34-91cd-604090f431f1",
+		"name": "Hachathon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Actors",
+			"item": [
+				{
+					"name": "All Actors",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/actors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Single Actor",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/actors/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actors",
+								"2"
+							]
+						},
+						"description": "Get an Actor instance"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Actor",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Nikos\",\n    \"lastName\": \"Nikolaou\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/actors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actors"
+							]
+						},
+						"description": "Get an Actor instance"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Actor",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 6,\n    \"firstName\": \"Vasilis\",\n    \"lastName\": \"Vasiliou\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/actors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actors"
+							]
+						},
+						"description": "Get an Actor instance"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Actor by ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/actors/1601",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actors",
+								"1601"
+							]
+						},
+						"description": "Get an Actor instance"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Actor by ID Entity",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 1651,\n\t\"firstName\": \"Some Guy\",\n\t\"lastName\": \"Some Guy last name\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/actors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actors"
+							]
+						},
+						"description": "Get an Actor instance"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "All Categories",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Single Category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/categories/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories",
+								"2"
+							]
+						},
+						"description": "Get an Actor instance"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"My custom category\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories"
+							]
+						},
+						"description": "Get an Actor instance"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 6,\n    \"description\": \"My custom Horror category\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories"
+							]
+						},
+						"description": "Get an Actor instance"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category with ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/categories/20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories",
+								"20"
+							]
+						},
+						"description": "Get an Actor instance"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category with entity",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 20,\n    \"name\": \"New\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/categories/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories",
+								""
+							]
+						},
+						"description": "Get an Actor instance"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customers",
+			"item": [
+				{
+					"name": "All Customers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Single Customer",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/customers/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customers",
+								"2"
+							]
+						},
+						"description": "Get an Actor instance"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Customer",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Nikos\",\n    \"lastName\": \"Nikolaou\",\n    \"email\": \"nikos.nikolaou@example.com\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customers"
+							]
+						},
+						"description": "Get an Actor instance"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Customer",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 301,\n    \"firstName\": \"Vasilis\",\n    \"lastName\": \"Vasiliou\",\n    \"email\": \"vasilis.vasiliou@example.com\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customers"
+							]
+						},
+						"description": "Get an Actor instance"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Customer by ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/customers/1601",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customers",
+								"1601"
+							]
+						},
+						"description": "Get an Actor instance"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Customer by ID Entity",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 1651,\n\t\"firstName\": \"Some Guy\",\n\t\"lastName\": \"Some Guy last name\",\n\t\"email\": \"some.email@example.com\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customers"
+							]
+						},
+						"description": "Get an Actor instance"
+					},
+					"response": []
+				},
+				{
+					"name": "Report - Get Customers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+								"disabled": true
+							},
+							{
+								"key": "Action",
+								"type": "text",
+								"value": "report-getCustomers"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Films",
+			"item": [
+				{
+					"name": "All Films",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/films",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"films"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Single Film",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/films/3201",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"films",
+								"3201"
+							]
+						},
+						"description": "Get an Actor instance"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Film",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 2001,\n    \"title\": \"Tristique eos Constituto Voluptatibus\",\n    \"description\": \"eloquentiam potenti animal elit felis inciderint malesuada ornatus vituperatoribus eruditi lacus fuisset delenit gubergren volumus persius duo voluptaria convenire habemus sapientem pulvinar constituto alienum\",\n    \"release\": 2008,\n    \"language\": {\n        \"id\": 3,\n        \"name\": \"German\"\n    },\n    \"length\": 120,\n    \"rating\": \"PG\",\n    \"actors\": [\n        {\n            \"id\": 171,\n            \"firstName\": \"Suzanne\",\n            \"lastName\": \"Peck\"\n        },\n        {\n            \"id\": 74,\n            \"firstName\": \"Beverley\",\n            \"lastName\": \"Lane\"\n        },\n        {\n            \"id\": 103,\n            \"firstName\": \"Summer\",\n            \"lastName\": \"Lawson\"\n        },\n        {\n            \"id\": 220,\n            \"firstName\": \"Alejandro\",\n            \"lastName\": \"McCarthy\"\n        },\n        {\n            \"id\": 38,\n            \"firstName\": \"Carmelo\",\n            \"lastName\": \"Durham\"\n        },\n        {\n            \"id\": 286,\n            \"firstName\": \"Jody\",\n            \"lastName\": \"Summers\"\n        },\n        {\n            \"id\": 163,\n            \"firstName\": \"Penny\",\n            \"lastName\": \"Britt\"\n        },\n        {\n            \"id\": 284,\n            \"firstName\": \"Amparo\",\n            \"lastName\": \"Whitaker\"\n        },\n        {\n            \"id\": 116,\n            \"firstName\": \"Alfreda\",\n            \"lastName\": \"Morton\"\n        },\n        {\n            \"id\": 172,\n            \"firstName\": \"Jame\",\n            \"lastName\": \"Puckett\"\n        }\n    ],\n    \"categories\": [\n        {\n            \"id\": 8,\n            \"name\": \"Family\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Comedy\"\n        }\n    ]\n}\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/films",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"films"
+							]
+						},
+						"description": "Get an Actor instance"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Film",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 3201,\n    \"title\": \"Updated title\",\n    \"description\": \"Updated description\",\n    \"release\": 2008,\n    \"language\": {\n        \"id\": 3,\n        \"name\": \"German\"\n    },\n    \"length\": 120,\n    \"rating\": \"PG\",\n    \"actors\": [\n        {\n            \"id\": 171,\n            \"firstName\": \"Suzanne\",\n            \"lastName\": \"Peck\"\n        },\n        {\n            \"id\": 74,\n            \"firstName\": \"Beverley\",\n            \"lastName\": \"Lane\"\n        },\n        {\n            \"id\": 103,\n            \"firstName\": \"Summer\",\n            \"lastName\": \"Lawson\"\n        },\n        {\n            \"id\": 220,\n            \"firstName\": \"Alejandro\",\n            \"lastName\": \"McCarthy\"\n        },\n        {\n            \"id\": 38,\n            \"firstName\": \"Carmelo\",\n            \"lastName\": \"Durham\"\n        },\n        {\n            \"id\": 286,\n            \"firstName\": \"Jody\",\n            \"lastName\": \"Summers\"\n        },\n        {\n            \"id\": 163,\n            \"firstName\": \"Penny\",\n            \"lastName\": \"Britt\"\n        },\n        {\n            \"id\": 284,\n            \"firstName\": \"Amparo\",\n            \"lastName\": \"Whitaker\"\n        },\n        {\n            \"id\": 116,\n            \"firstName\": \"Alfreda\",\n            \"lastName\": \"Morton\"\n        },\n        {\n            \"id\": 172,\n            \"firstName\": \"Jame\",\n            \"lastName\": \"Puckett\"\n        }\n    ],\n    \"categories\": [\n        {\n            \"id\": 8,\n            \"name\": \"Family\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Comedy\"\n        }\n    ]\n}\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/films",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"films"
+							]
+						},
+						"description": "Get an Actor instance"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Film by ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/films/3201",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"films",
+								"3201"
+							]
+						},
+						"description": "Get an Actor instance"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Film by ID Entity",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 3201,\n    \"title\": \"Tristique eos Constituto Voluptatibus\",\n    \"description\": \"eloquentiam potenti animal elit felis inciderint malesuada ornatus vituperatoribus eruditi lacus fuisset delenit gubergren volumus persius duo voluptaria convenire habemus sapientem pulvinar constituto alienum\",\n    \"release\": 2008,\n    \"language\": {\n        \"id\": 3,\n        \"name\": \"German\"\n    },\n    \"length\": 120,\n    \"rating\": \"PG\",\n    \"actors\": [\n        {\n            \"id\": 171,\n            \"firstName\": \"Suzanne\",\n            \"lastName\": \"Peck\"\n        },\n        {\n            \"id\": 74,\n            \"firstName\": \"Beverley\",\n            \"lastName\": \"Lane\"\n        },\n        {\n            \"id\": 103,\n            \"firstName\": \"Summer\",\n            \"lastName\": \"Lawson\"\n        },\n        {\n            \"id\": 220,\n            \"firstName\": \"Alejandro\",\n            \"lastName\": \"McCarthy\"\n        },\n        {\n            \"id\": 38,\n            \"firstName\": \"Carmelo\",\n            \"lastName\": \"Durham\"\n        },\n        {\n            \"id\": 286,\n            \"firstName\": \"Jody\",\n            \"lastName\": \"Summers\"\n        },\n        {\n            \"id\": 163,\n            \"firstName\": \"Penny\",\n            \"lastName\": \"Britt\"\n        },\n        {\n            \"id\": 284,\n            \"firstName\": \"Amparo\",\n            \"lastName\": \"Whitaker\"\n        },\n        {\n            \"id\": 116,\n            \"firstName\": \"Alfreda\",\n            \"lastName\": \"Morton\"\n        },\n        {\n            \"id\": 172,\n            \"firstName\": \"Jame\",\n            \"lastName\": \"Puckett\"\n        }\n    ],\n    \"categories\": [\n        {\n            \"id\": 8,\n            \"name\": \"Family\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Comedy\"\n        }\n    ]\n}\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/films",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"films"
+							]
+						},
+						"description": "Get an Actor instance"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Languages",
+			"item": [
+				{
+					"name": "All Languages",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/languages",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"languages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Single Language",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/languages/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"languages",
+								"2"
+							]
+						},
+						"description": "Get an Actor instance"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Language",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Greek\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/languages",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"languages"
+							]
+						},
+						"description": "Get an Actor instance"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Language",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 6,\n    \"description\": \"My custom Horror category\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/languages",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"languages"
+							]
+						},
+						"description": "Get an Actor instance"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Language with ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/languages/1601",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"languages",
+								"1601"
+							]
+						},
+						"description": "Get an Actor instance"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Language with entity",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 1651,\n    \"name\": \"New\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/languages/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"languages",
+								""
+							]
+						},
+						"description": "Get an Actor instance"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rentals",
+			"item": [
+				{
+					"name": "All Rentals",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/rentals",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rentals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Single Rental",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/rentals/501",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rentals",
+								"501"
+							]
+						},
+						"description": "Get an Actor instance"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Rental",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customer\": {\n        \"id\": 382,\n        \"firstName\": \"Marshall\",\n        \"lastName\": \"Jackson\",\n        \"email\": \"Marshall.Jackson@example.com\"\n    },\n    \"film\": {\n        \"id\": 1230,\n        \"title\": \"Ridiculus Iriure Delenit\",\n        \"description\": \"dignissim ea vitae signiferumque viverra dictum pretium vix class posse pericula elitr gloriatur reprehendunt eam dictas quidam dissentiunt vituperatoribus leo labores perpetua possit duo appareat\",\n        \"release\": 1999,\n        \"language\": {\n            \"id\": 6,\n            \"name\": \"Japanese\"\n        },\n        \"length\": 146,\n        \"rating\": \"R\",\n        \"actors\": [\n            {\n                \"id\": 50,\n                \"firstName\": \"Olivia\",\n                \"lastName\": \"Dalton\"\n            },\n            {\n                \"id\": 193,\n                \"firstName\": \"Gavin\",\n                \"lastName\": \"McMahon\"\n            },\n            {\n                \"id\": 42,\n                \"firstName\": \"Johnathan\",\n                \"lastName\": \"Baldwin\"\n            },\n            {\n                \"id\": 154,\n                \"firstName\": \"Louisa\",\n                \"lastName\": \"Morales\"\n            },\n            {\n                \"id\": 40,\n                \"firstName\": \"Kenneth\",\n                \"lastName\": \"Church\"\n            },\n            {\n                \"id\": 15,\n                \"firstName\": \"Robbie\",\n                \"lastName\": \"Knight\"\n            },\n            {\n                \"id\": 97,\n                \"firstName\": \"Irving\",\n                \"lastName\": \"Weiss\"\n            },\n            {\n                \"id\": 129,\n                \"firstName\": \"Angel\",\n                \"lastName\": \"Ewing\"\n            },\n            {\n                \"id\": 77,\n                \"firstName\": \"Dewayne\",\n                \"lastName\": \"Kent\"\n            },\n            {\n                \"id\": 170,\n                \"firstName\": \"Joyce\",\n                \"lastName\": \"Raymond\"\n            }\n        ],\n        \"categories\": [\n            {\n                \"id\": 12,\n                \"name\": \"Music\"\n            }\n        ]\n    },\n    \"rentalDate\": \"2019-01-02T11:32:22.738+0000\",\n    \"rentalDays\": 4\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/rentals",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rentals"
+							]
+						},
+						"description": "Get an Actor instance"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Rental",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 501,\n    \"customer\": {\n        \"id\": 382,\n        \"firstName\": \"Marshall\",\n        \"lastName\": \"Jackson\",\n        \"email\": \"Marshall.Jackson@example.com\"\n    },\n    \"film\": {\n        \"id\": 1230,\n        \"title\": \"Today's rental\",\n        \"description\": \"Today's rental description\",\n        \"release\": 1999,\n        \"language\": {\n            \"id\": 6,\n            \"name\": \"Japanese\"\n        },\n        \"length\": 146,\n        \"rating\": \"R\",\n        \"actors\": [\n            {\n                \"id\": 50,\n                \"firstName\": \"Olivia\",\n                \"lastName\": \"Dalton\"\n            },\n            {\n                \"id\": 193,\n                \"firstName\": \"Gavin\",\n                \"lastName\": \"McMahon\"\n            },\n            {\n                \"id\": 42,\n                \"firstName\": \"Johnathan\",\n                \"lastName\": \"Baldwin\"\n            },\n            {\n                \"id\": 154,\n                \"firstName\": \"Louisa\",\n                \"lastName\": \"Morales\"\n            },\n            {\n                \"id\": 40,\n                \"firstName\": \"Kenneth\",\n                \"lastName\": \"Church\"\n            },\n            {\n                \"id\": 15,\n                \"firstName\": \"Robbie\",\n                \"lastName\": \"Knight\"\n            },\n            {\n                \"id\": 97,\n                \"firstName\": \"Irving\",\n                \"lastName\": \"Weiss\"\n            },\n            {\n                \"id\": 129,\n                \"firstName\": \"Angel\",\n                \"lastName\": \"Ewing\"\n            },\n            {\n                \"id\": 77,\n                \"firstName\": \"Dewayne\",\n                \"lastName\": \"Kent\"\n            },\n            {\n                \"id\": 170,\n                \"firstName\": \"Joyce\",\n                \"lastName\": \"Raymond\"\n            }\n        ],\n        \"categories\": [\n            {\n                \"id\": 12,\n                \"name\": \"Music\"\n            }\n        ]\n    },\n    \"rentalDate\": \"2019-01-02T11:32:22.738+0000\",\n    \"rentalDays\": 4\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/rentals",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rentals"
+							]
+						},
+						"description": "Get an Actor instance"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Rental  by ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/rentals/3201",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rentals",
+								"3201"
+							]
+						},
+						"description": "Get an Actor instance"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Rental by ID Entity",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 502,\n    \"customer\": {\n        \"id\": 382,\n        \"firstName\": \"Marshall\",\n        \"lastName\": \"Jackson\",\n        \"email\": \"Marshall.Jackson@example.com\"\n    },\n    \"film\": {\n        \"id\": 1230,\n        \"title\": \"Today's rental\",\n        \"description\": \"Today's rental description\",\n        \"release\": 1999,\n        \"language\": {\n            \"id\": 6,\n            \"name\": \"Japanese\"\n        },\n        \"length\": 146,\n        \"rating\": \"R\",\n        \"actors\": [\n            {\n                \"id\": 50,\n                \"firstName\": \"Olivia\",\n                \"lastName\": \"Dalton\"\n            },\n            {\n                \"id\": 193,\n                \"firstName\": \"Gavin\",\n                \"lastName\": \"McMahon\"\n            },\n            {\n                \"id\": 42,\n                \"firstName\": \"Johnathan\",\n                \"lastName\": \"Baldwin\"\n            },\n            {\n                \"id\": 154,\n                \"firstName\": \"Louisa\",\n                \"lastName\": \"Morales\"\n            },\n            {\n                \"id\": 40,\n                \"firstName\": \"Kenneth\",\n                \"lastName\": \"Church\"\n            },\n            {\n                \"id\": 15,\n                \"firstName\": \"Robbie\",\n                \"lastName\": \"Knight\"\n            },\n            {\n                \"id\": 97,\n                \"firstName\": \"Irving\",\n                \"lastName\": \"Weiss\"\n            },\n            {\n                \"id\": 129,\n                \"firstName\": \"Angel\",\n                \"lastName\": \"Ewing\"\n            },\n            {\n                \"id\": 77,\n                \"firstName\": \"Dewayne\",\n                \"lastName\": \"Kent\"\n            },\n            {\n                \"id\": 170,\n                \"firstName\": \"Joyce\",\n                \"lastName\": \"Raymond\"\n            }\n        ],\n        \"categories\": [\n            {\n                \"id\": 12,\n                \"name\": \"Music\"\n            }\n        ]\n    },\n    \"rentalDate\": \"2019-01-02T11:32:22.738+0000\",\n    \"rentalDays\": 7\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/rentals",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rentals"
+							]
+						},
+						"description": "Get an Actor instance"
+					},
+					"response": []
+				},
+				{
+					"name": "Report - Get Rentals per Customer",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+							},
+							{
+								"key": "Action",
+								"type": "text",
+								"value": "report-getRentalsPerCustomer"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/rentals",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rentals"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
