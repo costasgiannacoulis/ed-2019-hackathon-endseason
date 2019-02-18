@@ -52,11 +52,13 @@ public class CustomerController extends AbstractController<Customer> {
 
 		final List<Customer> customers = customerService.findAll();
 		if (XLSX_MEDIA_TYPE.toString().equalsIgnoreCase(contentType)) {
+			log.trace("Generating XLSX 'report-getCustomers' report.");
+
 			headers.addAll(getDownloadHeaders("report-getCustomers.xlsx"));
-			log.trace("Generating XLSX report for {} customers.", customers.size());
 			reportBuilder.getCustomers(customers).write(outputStream);
 		} else {
-			log.trace("Returning JSON representation for {} customers.", customers.size());
+			log.trace("Returning JSON representation for 'report-getCustomers' report.");
+
 			final ObjectMapper mapper = new ObjectMapper();
 			mapper.writeValue(outputStream, ApiResponse.<List>builder().data(customers).build());
 			contentType = MediaType.APPLICATION_JSON_VALUE;
